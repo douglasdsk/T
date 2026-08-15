@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>500+ Receitas Infalíveis Pro Seu Filho Comer Legumes</title>
+<meta name="description" content="Receitas testadas e aprovadas por mais de 3 mil famílias pra transformar a hora da refeição em festa — sem chantagem, sem choro, sem drama.">
+
+<!-- ⚠️ PÁGINA DE DEMONSTRAÇÃO — troque os placeholders marcados com "SEU_LINK_AQUI" antes de publicar de verdade -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Mulish:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg: #F3F7EA;
+    --bg-alt: #ECF2E0;
+    --ink: #23321F;
+    --ink-soft: #4B5A45;
+    --green-deep: #2F6B3C;
+    --green-mid: #6FA85B;
+    --green-pale: #DCEBD2;
+    --coral: #EF5430;
+    --coral-dark: #D8431F;
+    --corn: #F3B93E;
+    --card: #FFFFFF;
+    --line: #DDE6CE;
+    --shadow: 0 12px 30px -12px rgba(35, 50, 31, 0.25);
+    --radius-lg: 28px;
+    --radius-md: 18px;
+    --maxw: 480px;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Mulish', sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+  h1,h2,h3{font-family:'Fredoka', sans-serif; font-weight:600; line-height:1.15; color:var(--ink);}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px;}
+  .section{padding:48px 0;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:12.5px; font-weight:800; letter-spacing:.04em; text-transform:uppercase;
+    color:var(--green-deep); background:var(--green-pale);
+    padding:6px 14px; border-radius:99px; margin-bottom:14px;
+  }
+  .center{text-align:center;}
+  .muted{color:var(--ink-soft);}
+
+  /* ---------- Scalloped card signature ---------- */
+  .scallop-card{
+    position:relative;
+    background:var(--card);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow);
+    padding:26px 22px 24px;
+  }
+  .scallop-card::before, .scallop-card::after{
+    content:"";
+    position:absolute; left:14px; right:14px; height:14px;
+    background-image: radial-gradient(circle at 10px 0, transparent 9px, var(--bg) 9.5px);
+    background-size:20px 20px;
+    background-repeat:repeat-x;
+  }
+  .scallop-card::before{ top:-1px; }
+  .scallop-card::after{ bottom:-1px; transform:rotate(180deg); }
+
+  /* ---------- Sticky urgency bar ---------- */
+  .urgency{
+    background:var(--ink);
+    color:#fff;
+    text-align:center;
+    font-size:13px;
+    font-weight:700;
+    padding:10px 14px;
+    letter-spacing:.01em;
+  }
+  .urgency span{color:var(--corn);}
+  #countdown{font-variant-numeric:tabular-nums; color:#FFD98E;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:34px 0 30px;
+    background:
+      radial-gradient(120% 90% at 50% -10%, var(--green-pale) 0%, transparent 60%),
+      var(--bg);
+  }
+  .hero h1{
+    font-size:30px;
+    margin-bottom:14px;
+  }
+  .hero h1 .hl{
+    color:var(--green-deep);
+    position:relative;
+    white-space:nowrap;
+  }
+  .hero p.lead{
+    font-size:16px;
+    color:var(--ink-soft);
+    margin-bottom:22px;
+  }
+  .hero-art{
+    display:flex; justify-content:center; gap:10px; font-size:34px;
+    margin:18px 0 24px;
+    filter:drop-shadow(0 8px 14px rgba(0,0,0,.12));
+  }
+  .hero-art span{
+    background:var(--card); border-radius:20px; padding:12px 14px;
+    box-shadow:var(--shadow);
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:block; width:100%;
+    text-align:center;
+    font-family:'Fredoka', sans-serif;
+    font-size:18px; font-weight:600;
+    color:#fff;
+    background:linear-gradient(180deg, var(--coral) 0%, var(--coral-dark) 100%);
+    border:none;
+    border-radius:16px;
+    padding:18px 20px;
+    cursor:pointer;
+    box-shadow:0 10px 20px -6px rgba(216,67,31,.55);
+    text-decoration:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:active{ transform:translateY(2px); box-shadow:0 6px 12px -6px rgba(216,67,31,.5); }
+  .btn.secondary{
+    background:var(--green-deep);
+    box-shadow:0 10px 20px -6px rgba(47,107,60,.45);
+  }
+  .btn-note{
+    text-align:center; font-size:12.5px; color:var(--ink-soft);
+    margin-top:10px; display:flex; justify-content:center; gap:14px; flex-wrap:wrap;
+  }
+
+  /* ---------- Pain points ---------- */
+  .pain-list{ list-style:none; display:flex; flex-direction:column; gap:12px; margin-top:18px;}
+  .pain-list li{
+    display:flex; gap:12px; align-items:flex-start;
+    background:var(--card); border:1px solid var(--line);
+    border-radius:var(--radius-md); padding:14px 16px;
+    font-size:15px; font-weight:700;
+  }
+  .pain-list li .ico{ font-size:20px; flex:0 0 auto; }
+
+  /* ---------- Benefits grid ---------- */
+  .benefits{
+    display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:18px;
+  }
+  .benefit{
+    background:var(--card); border-radius:var(--radius-md);
+    padding:16px 14px; text-align:left;
+    border:1px solid var(--line);
+  }
+  .benefit .ico{
+    font-size:24px; display:inline-flex;
+    background:var(--green-pale); border-radius:12px; padding:8px;
+    margin-bottom:10px;
+  }
+  .benefit h3{ font-size:14.5px; margin-bottom:4px;}
+  .benefit p{ font-size:12.5px; color:var(--ink-soft); }
+
+  /* ---------- Category showcase ---------- */
+  .cat-list{ display:flex; flex-direction:column; gap:10px; margin-top:18px; }
+  .cat-item{
+    display:flex; align-items:center; justify-content:space-between;
+    background:var(--card); border:1px solid var(--line);
+    border-radius:14px; padding:13px 16px;
+  }
+  .cat-item .name{ font-weight:800; font-size:14.5px; display:flex; gap:10px; align-items:center;}
+  .cat-item .count{
+    font-size:12.5px; font-weight:800; color:var(--green-deep);
+    background:var(--green-pale); padding:4px 10px; border-radius:99px;
+  }
+
+  /* ---------- Bonuses ---------- */
+  .bonus-card{
+    display:flex; gap:14px; align-items:center;
+    background:var(--card); border:1px dashed var(--green-mid);
+    border-radius:var(--radius-md); padding:16px; margin-top:12px;
+  }
+  .bonus-card .num{
+    flex:0 0 auto; width:42px; height:42px; border-radius:12px;
+    background:var(--corn); color:var(--ink);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fredoka',sans-serif; font-weight:700; font-size:15px;
+  }
+  .bonus-card h3{ font-size:14.5px; }
+  .bonus-card p{ font-size:12.5px; color:var(--ink-soft); margin-top:2px;}
+  .bonus-card .price{
+    font-size:12px; margin-top:6px; font-weight:800;
+  }
+  .bonus-card .price .old{ text-decoration:line-through; color:#9aa38f; margin-right:6px;}
+  .bonus-card .price .free{ color:var(--green-deep); }
+  .bonus-total{
+    margin-top:16px; text-align:center; background:var(--green-deep); color:#fff;
+    border-radius:14px; padding:14px; font-family:'Fredoka',sans-serif; font-size:14.5px; font-weight:600;
+  }
+
+  /* ---------- Testimonials ---------- */
+  .stars{ color:var(--corn); font-size:14px; letter-spacing:1px;}
+  .t-scroll{
+    display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory;
+    margin:18px -20px 0; padding:4px 20px 10px;
+    -webkit-overflow-scrolling:touch;
+  }
+  .t-scroll::-webkit-scrollbar{ display:none; }
+  .t-card{
+    scroll-snap-align:start; flex:0 0 82%;
+    background:var(--card); border:1px solid var(--line);
+    border-radius:var(--radius-md); padding:16px;
+  }
+  .t-card .who{ display:flex; align-items:center; gap:10px; margin-bottom:8px;}
+  .t-card .avatar{
+    width:36px; height:36px; border-radius:50%;
+    background:var(--green-pale); color:var(--green-deep);
+    display:flex; align-items:center; justify-content:center;
+    font-weight:800; font-size:13px; flex:0 0 auto;
+  }
+  .t-card .name{ font-weight:800; font-size:13.5px;}
+  .t-card .sub{ font-size:11.5px; color:var(--ink-soft);}
+  .t-card p.txt{ font-size:13.5px; color:var(--ink); margin-top:6px;}
+  .swipe-hint{ text-align:center; font-size:11.5px; color:var(--ink-soft); margin-top:8px;}
+
+  .rating-summary{
+    display:flex; align-items:center; gap:14px; justify-content:center; margin-top:16px;
+  }
+  .rating-summary .big{ font-family:'Fredoka',sans-serif; font-size:34px; font-weight:600;}
+
+  /* ---------- Pricing ---------- */
+  .price-card{ margin-top:20px; text-align:center; }
+  .price-card .tag{
+    display:inline-block; background:var(--coral); color:#fff;
+    font-size:12px; font-weight:800; padding:5px 14px; border-radius:99px;
+    margin-bottom:14px; letter-spacing:.03em;
+  }
+  .price-card ul{ list-style:none; text-align:left; margin:16px 0; display:flex; flex-direction:column; gap:8px;}
+  .price-card ul li{ font-size:14px; display:flex; gap:8px; }
+  .price-card .old-price{ color:var(--ink-soft); text-decoration:line-through; font-size:15px;}
+  .price-card .new-price{
+    font-family:'Fredoka',sans-serif; font-size:44px; font-weight:700; color:var(--green-deep);
+    margin:4px 0 2px;
+  }
+  .price-card .new-price sup{ font-size:20px; top:-14px; }
+  .price-card .installments{ font-size:12.5px; color:var(--ink-soft); margin-bottom:16px;}
+
+  /* ---------- Guarantee ---------- */
+  .guarantee{
+    display:flex; gap:14px; align-items:center;
+    background:var(--green-pale); border-radius:var(--radius-md);
+    padding:18px; margin-top:20px;
+  }
+  .guarantee .seal{
+    flex:0 0 auto; width:56px; height:56px; border-radius:50%;
+    background:var(--green-deep); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:26px;
+  }
+  .guarantee h3{ font-size:15px; }
+  .guarantee p{ font-size:12.5px; color:var(--ink-soft); margin-top:2px;}
+
+  /* ---------- Delivery ---------- */
+  .delivery-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:18px; text-align:center;
+  }
+  .delivery-grid .d-ico{
+    font-size:22px; background:var(--card); border:1px solid var(--line);
+    border-radius:14px; padding:14px 6px; margin-bottom:6px;
+  }
+  .delivery-grid .d-label{ font-size:11px; font-weight:700; color:var(--ink-soft); }
+
+  /* ---------- FAQ ---------- */
+  details{
+    background:var(--card); border:1px solid var(--line);
+    border-radius:14px; padding:14px 16px; margin-top:10px;
+  }
+  summary{
+    font-weight:800; font-size:14.5px; cursor:pointer;
+    list-style:none; display:flex; justify-content:space-between; align-items:center; gap:10px;
+  }
+  summary::-webkit-details-marker{ display:none; }
+  summary::after{
+    content:"+"; font-size:20px; color:var(--green-deep); font-weight:800; flex:0 0 auto;
+  }
+  details[open] summary::after{ content:"–"; }
+  details p{ font-size:13.5px; color:var(--ink-soft); margin-top:10px; }
+
+  /* ---------- Sticky CTA ---------- */
+  .sticky-cta{
+    position:fixed; left:0; right:0; bottom:0; z-index:50;
+    background:rgba(255,255,255,.92); backdrop-filter:blur(6px);
+    border-top:1px solid var(--line);
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  }
+  .sticky-cta .wrap{ max-width:var(--maxw); padding:0; }
+  .sticky-cta .row{ display:flex; align-items:center; gap:12px; }
+  .sticky-cta .price-mini{ font-family:'Fredoka',sans-serif; font-weight:700; font-size:15px; color:var(--green-deep); white-space:nowrap;}
+  .sticky-cta .price-mini small{ display:block; font-size:10px; color:var(--ink-soft); font-weight:600;}
+  .sticky-cta .btn{ padding:13px 16px; font-size:15px; }
+
+  footer{
+    text-align:center; padding:26px 20px 110px; font-size:11.5px; color:var(--ink-soft);
+  }
+  footer .disclaimer{
+    margin-top:14px; padding-top:14px; border-top:1px solid var(--line);
+    font-size:10.5px; opacity:.8;
+  }
+
+  @media (min-width:600px){
+    .hero h1{ font-size:36px; }
+    .benefits{ grid-template-columns:1fr 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- URGENCY BAR -->
+<div class="urgency">
+  🔥 Oferta relâmpago acaba em <span id="countdown">20:00</span> — <span>-64% OFF hoje</span>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap center">
+    <div class="eyebrow">🥦 +3.200 famílias já usam</div>
+    <h1>500+ Receitas <span class="hl">Infalíveis</span> pro Seu Filho Comer Legumes</h1>
+    <p class="lead">Receitas testadas e aprovadas por mais de 3 mil famílias pra transformar a hora da refeição em festa — sem chantagem, sem choro e sem drama.</p>
+
+    <div class="hero-art">
+      <span>🥕</span><span>🥦</span><span>🍅</span><span>🌽</span>
+    </div>
+
+    <a href="#comprar" class="btn">Quero as 500+ Receitas Agora</a>
+    <div class="btn-note">
+      <span>🔒 Compra Segura</span>
+      <span>📱 Acesso Imediato</span>
+      <span>🛡️ 7 Dias de Garantia</span>
+    </div>
+  </div>
+</header>
+
+<!-- PAIN POINTS -->
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">Essa página é pra você</div>
+    <h2 style="font-size:22px;">Se alguma dessas frases já saiu da sua boca hoje...</h2>
+    <ul class="pain-list">
+      <li><span class="ico">😩</span> "Já tentei de tudo e o prato sempre volta cheio."</li>
+      <li><span class="ico">🙈</span> "Vivo escondendo legume na comida com medo de ser pega."</li>
+      <li><span class="ico">😔</span> "Tenho medo do meu filho crescer sem hábito saudável."</li>
+      <li><span class="ico">😤</span> "Cansei de brigar e negociar em toda refeição."</li>
+      <li><span class="ico">🤷‍♀️</span> "Quero solução prática, não mais um sermão de nutricionista."</li>
+    </ul>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="section" style="background:var(--bg-alt); border-radius:40px;">
+  <div class="wrap">
+    <div class="eyebrow">Benefícios</div>
+    <h2 style="font-size:22px;">O que você recebe hoje</h2>
+    <div class="benefits">
+      <div class="benefit">
+        <span class="ico">🥕</span>
+        <h3>500+ receitas</h3>
+        <p>Disfarçadas e à mostra, pra todo tipo de paladar.</p>
+      </div>
+      <div class="benefit">
+        <span class="ico">📅</span>
+        <h3>Cardápio de 30 dias</h3>
+        <p>Pronto pra usar, sem precisar pensar no que cozinhar.</p>
+      </div>
+      <div class="benefit">
+        <span class="ico">👶</span>
+        <h3>Por faixa etária</h3>
+        <p>Receitas organizadas de 1 a 10 anos.</p>
+      </div>
+      <div class="benefit">
+        <span class="ico">🕊️</span>
+        <h3>Fim do drama</h3>
+        <p>Estratégias práticas pra hora da refeição ficar leve.</p>
+      </div>
+      <div class="benefit">
+        <span class="ico">📱</span>
+        <h3>Onde quiser</h3>
+        <p>No celular, computador ou impresso na cozinha.</p>
+      </div>
+      <div class="benefit">
+        <span class="ico">💚</span>
+        <h3>Aprovado</h3>
+        <p>Revisado por nutricionista infantil parceira.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">Conteúdo completo</div>
+    <h2 style="font-size:22px;">Veja tudo que está incluso</h2>
+    <div class="cat-list">
+      <div class="cat-item"><span class="name">🍳 Café da Manhã Esperto</span><span class="count">60</span></div>
+      <div class="cat-item"><span class="name">🍛 Almoços Coloridos</span><span class="count">120</span></div>
+      <div class="cat-item"><span class="name">🍽️ Jantares Rápidos</span><span class="count">100</span></div>
+      <div class="cat-item"><span class="name">🧃 Lanches Divertidos</span><span class="count">80</span></div>
+      <div class="cat-item"><span class="name">🍲 Sopas e Cremes Disfarçados</span><span class="count">60</span></div>
+      <div class="cat-item"><span class="name">🍰 Sobremesas com Legumes</span><span class="count">50</span></div>
+      <div class="cat-item"><span class="name">🥣 Molhos e Acompanhamentos</span><span class="count">30</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BONUSES -->
+<section class="section" style="background:var(--bg-alt); border-radius:40px;">
+  <div class="wrap">
+    <div class="eyebrow">🎁 Presente especial</div>
+    <h2 style="font-size:22px;">Compre agora e leve 3 bônus grátis</h2>
+
+    <div class="bonus-card">
+      <div class="num">01</div>
+      <div>
+        <h3>Cardápio Semanal Pronto</h3>
+        <p>Ideias prontas pra variar a semana toda.</p>
+        <p class="price"><span class="old">R$27,90</span><span class="free">Grátis hoje</span></p>
+      </div>
+    </div>
+    <div class="bonus-card">
+      <div class="num">02</div>
+      <div>
+        <h3>Guia "Legume Sem Trauma"</h3>
+        <p>Como apresentar novos alimentos sem briga.</p>
+        <p class="price"><span class="old">R$37,90</span><span class="free">Grátis hoje</span></p>
+      </div>
+    </div>
+    <div class="bonus-card">
+      <div class="num">03</div>
+      <div>
+        <h3>Lista de Compras Inteligente</h3>
+        <p>Monte a feira certa sem desperdício.</p>
+        <p class="price"><span class="old">R$19,90</span><span class="free">Grátis hoje</span></p>
+      </div>
+    </div>
+
+    <div class="bonus-total">💚 Valor total dos bônus: R$85,70 — tudo grátis hoje!</div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">Depoimentos</div>
+    <h2 style="font-size:22px;">Quem já testou, aprovou</h2>
+
+    <div class="rating-summary">
+      <span class="big">4.9</span>
+      <div>
+        <div class="stars">★★★★★</div>
+        <div class="muted" style="font-size:12px;">3.212 avaliações</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="t-scroll">
+    <div class="t-card">
+      <div class="who">
+        <div class="avatar">FM</div>
+        <div><div class="name">Fernanda M.</div><div class="sub">mãe da Bia, 5 anos</div></div>
+      </div>
+      <div class="stars">★★★★★</div>
+      <p class="txt">Achei que era mais uma promessa vazia, mas o creminho de abóbora funcionou de primeira aqui em casa. Bia pediu mais!</p>
+    </div>
+    <div class="t-card">
+      <div class="who">
+        <div class="avatar">RA</div>
+        <div><div class="name">Rodrigo A.</div><div class="sub">pai do Théo, 7 anos</div></div>
+      </div>
+      <div class="stars">★★★★★</div>
+      <p class="txt">O cardápio de 30 dias salvou minha rotina. Não preciso mais inventar o que fazer todo dia.</p>
+    </div>
+    <div class="t-card">
+      <div class="who">
+        <div class="avatar">CS</div>
+        <div><div class="name">Camila S.</div><div class="sub">mãe de gêmeos, 4 anos</div></div>
+      </div>
+      <div class="stars">★★★★★</div>
+      <p class="txt">As receitas por idade ajudaram demais. Consegui adaptar pros dois, que comem de formas bem diferentes.</p>
+    </div>
+    <div class="t-card">
+      <div class="who">
+        <div class="avatar">JP</div>
+        <div><div class="name">Juliana P.</div><div class="sub">mãe da Sofia, 3 anos</div></div>
+      </div>
+      <div class="stars">★★★★★</div>
+      <p class="txt">O guia de como apresentar legume sem trauma mudou nossa relação com a hora da refeição. Bônus que ninguém fala, mas é ótimo.</p>
+    </div>
+  </div>
+  <p class="swipe-hint">👈 Arraste para ver mais depoimentos 👉</p>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="comprar" style="background:var(--bg-alt); border-radius:40px;">
+  <div class="wrap">
+    <div class="scallop-card price-card">
+      <div class="tag">Oferta relâmpago de hoje</div>
+      <h2 style="font-size:20px;">500+ Receitas Infalíveis</h2>
+      <ul>
+        <li>✅ 500+ receitas de legumes pra crianças</li>
+        <li>✅ Cardápio de 30 dias pronto</li>
+        <li>✅ Receitas por faixa etária (1 a 10 anos)</li>
+        <li>✅ Acesso vitalício</li>
+        <li>✅ 3 bônus exclusivos inclusos</li>
+      </ul>
+      <div class="old-price">De R$97,00</div>
+      <div class="new-price">R$35<sup>,00</sup></div>
+      <div class="installments">à vista no Pix, ou em até 3x no cartão</div>
+      <!-- 🔗 Troque o href abaixo pelo link real do seu checkout (Hotmart, Kiwify, Eduzz...) -->
+      <a href="#" class="btn" onclick="alert('Página de demonstração: substitua este botão pelo link do seu checkout.'); return false;">Quero Garantir Minha Vaga</a>
+      <div class="btn-note"><span>🔒 Pagamento 100% seguro</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="section">
+  <div class="wrap">
+    <div class="guarantee">
+      <div class="seal">🛡️</div>
+      <div>
+        <h3>Garantia incondicional de 7 dias</h3>
+        <p>Teste as receitas em casa. Se não gostar, devolvemos 100% do valor, sem perguntas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERY -->
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">Como você recebe</div>
+    <h2 style="font-size:22px;">Acesso liberado na hora</h2>
+    <div class="delivery-grid">
+      <div><div class="d-ico">📱</div><div class="d-label">No celular</div></div>
+      <div><div class="d-ico">💻</div><div class="d-label">No computador</div></div>
+      <div><div class="d-ico">🖨️</div><div class="d-label">Pra imprimir</div></div>
+      <div><div class="d-ico">⚡</div><div class="d-label">Envio imediato</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">Dúvidas frequentes</div>
+    <h2 style="font-size:22px; margin-bottom:6px;">Perguntas frequentes</h2>
+
+    <details>
+      <summary>Funciona mesmo pra crianças seletivas?</summary>
+      <p>Sim. As receitas foram pensadas em etapas, começando por versões disfarçadas até chegar no legume à mostra, no ritmo da criança.</p>
+    </details>
+    <details>
+      <summary>Preciso saber cozinhar bem?</summary>
+      <p>Não. O passo a passo é simples e direto, pensado pra quem tem pouco tempo e pouca prática na cozinha.</p>
+    </details>
+    <details>
+      <summary>Como vou receber o material?</summary>
+      <p>Assim que a compra é aprovada, o acesso é liberado imediatamente por e-mail, podendo ser aberto no celular, computador ou impresso.</p>
+    </details>
+    <details>
+      <summary>E se eu não gostar?</summary>
+      <p>Você tem 7 dias de garantia incondicional. Se não ficar satisfeita, é só pedir o reembolso dentro do prazo.</p>
+    </details>
+    <details>
+      <summary>Por quanto tempo tenho acesso?</summary>
+      <p>O acesso é vitalício. Você compra uma vez e consulta as receitas sempre que quiser.</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 500+ Receitas Infalíveis. Todos os direitos reservados.</p>
+  <div class="disclaimer">
+    ⚠️ Esta é uma página de demonstração criada para fins de teste/aprendizado. Produto, depoimentos e preços são fictícios. Substitua o link de checkout antes de publicar com um produto real.
+  </div>
+</footer>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta">
+  <div class="wrap row">
+    <div class="price-mini">R$35,00<small>por R$97,00</small></div>
+    <a href="#comprar" class="btn" style="flex:1;">Comprar Agora</a>
+  </div>
+</div>
+
+<script>
+  // Contador regressivo de urgência — reinicia a cada 20 min em uma nova sessão do navegador
+  (function(){
+    var KEY = 'promo_end_ts';
+    var DURATION = 20 * 60 * 1000; // 20 minutos
+    var end = sessionStorage.getItem(KEY);
+    if(!end){
+      end = Date.now() + DURATION;
+      sessionStorage.setItem(KEY, end);
+    }
+    end = parseInt(end, 10);
+
+    var el = document.getElementById('countdown');
+    function tick(){
+      var diff = end - Date.now();
+      if(diff <= 0){
+        sessionStorage.removeItem(KEY);
+        end = Date.now() + DURATION;
+        sessionStorage.setItem(KEY, end);
+        diff = DURATION;
+      }
+      var m = Math.floor(diff / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+      el.textContent = String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>
+
+</body>
+</html>
