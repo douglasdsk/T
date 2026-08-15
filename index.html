@@ -121,8 +121,7 @@
   .video-wrap{
     position:relative;
     width:100%;
-    aspect-ratio:9/16;
-    max-height:520px;
+    padding-top:177.78%; /* proporção 9:16 */
     margin:20px 0 24px;
     border-radius:var(--radius-lg);
     overflow:hidden;
@@ -130,9 +129,22 @@
     background:#000;
   }
   .video-wrap iframe{
-    position:absolute; top:0; left:0; width:100%; height:100%; border:0;
+    position:absolute;
+    top:50%; left:50%;
+    width:100%; height:100%;
+    /* aumenta um pouco e centraliza pra "sangrar" pra fora e cortar
+       qualquer barra preta/enquadramento do player do YouTube */
+    transform:translate(-50%, -50%) scale(1.22);
+    border:0; pointer-events:none; /* impede clique abrir o YouTube */
   }
-  /* se preferir um vídeo horizontal (16:9) em vez de vertical, troque aspect-ratio para 16/9 acima */
+  .video-mute-btn{
+    position:absolute; right:14px; bottom:14px; z-index:5;
+    width:38px; height:38px; border-radius:50%;
+    background:rgba(0,0,0,.55); color:#fff;
+    border:none; font-size:16px;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+  }
 
   /* ---------- Buttons ---------- */
   .btn{
@@ -352,14 +364,16 @@
     <h1>500+ Receitas <span class="hl">Infalíveis</span> pro Seu Filho Comer Legumes</h1>
     <p class="lead">Receitas testadas e aprovadas por mais de 3 mil famílias pra transformar a hora da refeição em festa — sem chantagem, sem choro e sem drama.</p>
 
-    <!-- 🎥 Troque SEU_ID_DO_VIDEO pelo ID do seu vídeo no YouTube (a parte depois de "v=" ou "youtu.be/") -->
+    <!-- 🎥 Vídeo em loop, mudo por padrão (exigência dos navegadores pra autoplay) -->
     <div class="video-wrap">
       <iframe
-        src="https://www.youtube.com/embed/FuYwdV1Kx9Y"
+        id="hero-video"
+        src="https://www.youtube.com/embed/FuYwdV1Kx9Y?autoplay=1&mute=1&loop=1&playlist=FuYwdV1Kx9Y&controls=0&modestbranding=1&rel=0&showinfo=0&fs=0&disablekb=1&iv_load_policy=3&playsinline=1&enablejsapi=1"
         title="Vídeo de apresentação"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="autoplay; encrypted-media; picture-in-picture"
         allowfullscreen>
       </iframe>
+      <button class="video-mute-btn" id="mute-toggle" onclick="toggleMute()" aria-label="Ativar som">🔇</button>
     </div>
 
     <a href="#comprar" class="btn">Quero as 500+ Receitas Agora</a>
@@ -623,6 +637,19 @@
     <a href="#comprar" class="btn" style="flex:1;">Comprar Agora</a>
   </div>
 </div>
+
+<script>
+  // Controla som do vídeo do hero via YouTube postMessage API
+  var videoMuted = true;
+  function toggleMute(){
+    var iframe = document.getElementById('hero-video');
+    var btn = document.getElementById('mute-toggle');
+    var func = videoMuted ? 'unMute' : 'mute';
+    iframe.contentWindow.postMessage(JSON.stringify({event:'command', func: func, args:[]}), '*');
+    videoMuted = !videoMuted;
+    btn.textContent = videoMuted ? '🔇' : '🔊';
+  }
+</script>
 
 <script>
   // Contador regressivo de urgência — reinicia a cada 20 min em uma nova sessão do navegador
