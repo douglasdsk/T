@@ -135,7 +135,32 @@
     /* aumenta um pouco e centraliza pra "sangrar" pra fora e cortar
        qualquer barra preta/enquadramento do player do YouTube */
     transform:translate(-50%, -50%) scale(1.22);
-    border:0; pointer-events:none; /* impede clique abrir o YouTube */
+    border:0;
+  }
+  .video-poster{
+    position:absolute; inset:0;
+    background-size:cover; background-position:center;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; z-index:6;
+  }
+  .video-poster::before{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.35) 100%);
+  }
+  .video-poster .play-ico{
+    position:relative; z-index:1;
+    width:68px; height:68px; border-radius:50%;
+    background:rgba(255,255,255,.95);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 24px rgba(0,0,0,.35);
+  }
+  .video-poster .play-ico::after{
+    content:"";
+    border-style:solid;
+    border-width:12px 0 12px 20px;
+    border-color:transparent transparent transparent var(--coral);
+    margin-left:4px;
   }
   .video-mute-btn{
     position:absolute; right:14px; bottom:14px; z-index:5;
@@ -364,16 +389,17 @@
     <h1>500+ Receitas <span class="hl">Infalíveis</span> pro Seu Filho Comer Legumes</h1>
     <p class="lead">Receitas testadas e aprovadas por mais de 3 mil famílias pra transformar a hora da refeição em festa — sem chantagem, sem choro e sem drama.</p>
 
-    <!-- 🎥 Vídeo em loop, mudo por padrão (exigência dos navegadores pra autoplay) -->
-    <div class="video-wrap">
+    <!-- 🎥 Vídeo com capa: só carrega/inicia quando a pessoa toca (mais confiável que autoplay) -->
+    <div class="video-wrap" id="video-wrap">
+      <div class="video-poster" id="video-poster" style="background-image:url('https://img.youtube.com/vi/FuYwdV1Kx9Y/hqdefault.jpg')" onclick="playHeroVideo()">
+        <div class="play-ico"></div>
+      </div>
       <iframe
         id="hero-video"
-        src="https://www.youtube.com/embed/FuYwdV1Kx9Y?autoplay=1&mute=1&loop=1&playlist=FuYwdV1Kx9Y&controls=0&modestbranding=1&rel=0&showinfo=0&fs=0&disablekb=1&iv_load_policy=3&playsinline=1&enablejsapi=1"
         title="Vídeo de apresentação"
         allow="autoplay; encrypted-media; picture-in-picture"
         allowfullscreen>
       </iframe>
-      <button class="video-mute-btn" id="mute-toggle" onclick="toggleMute()" aria-label="Ativar som">🔇</button>
     </div>
 
     <a href="#comprar" class="btn">Quero as 500+ Receitas Agora</a>
