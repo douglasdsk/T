@@ -6,6 +6,8 @@
 <title>500+ Receitas Infalíveis Pro Seu Filho Comer Legumes</title>
 <meta name="description" content="Receitas testadas e aprovadas por mais de 3 mil famílias pra transformar a hora da refeição em festa — sem chantagem, sem choro, sem drama.">
 
+<!-- ⚠️ PÁGINA DE DEMONSTRAÇÃO — troque os placeholders marcados com "SEU_LINK_AQUI" antes de publicar de verdade -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Mulish:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -114,6 +116,23 @@
     background:var(--card); border-radius:20px; padding:12px 14px;
     box-shadow:var(--shadow);
   }
+
+  /* ---------- Hero video ---------- */
+  .video-wrap{
+    position:relative;
+    width:100%;
+    aspect-ratio:9/16;
+    max-height:520px;
+    margin:20px 0 24px;
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    background:#000;
+  }
+  .video-wrap iframe{
+    position:absolute; top:0; left:0; width:100%; height:100%; border:0;
+  }
+  /* se preferir um vídeo horizontal (16:9) em vez de vertical, troque aspect-ratio para 16/9 acima */
 
   /* ---------- Buttons ---------- */
   .btn{
@@ -308,6 +327,10 @@
   footer{
     text-align:center; padding:26px 20px 110px; font-size:11.5px; color:var(--ink-soft);
   }
+  footer .disclaimer{
+    margin-top:14px; padding-top:14px; border-top:1px solid var(--line);
+    font-size:10.5px; opacity:.8;
+  }
 
   @media (min-width:600px){
     .hero h1{ font-size:36px; }
@@ -329,8 +352,14 @@
     <h1>500+ Receitas <span class="hl">Infalíveis</span> pro Seu Filho Comer Legumes</h1>
     <p class="lead">Receitas testadas e aprovadas por mais de 3 mil famílias pra transformar a hora da refeição em festa — sem chantagem, sem choro e sem drama.</p>
 
-    <div class="hero-art">
-      <span>🥕</span><span>🥦</span><span>🍅</span><span>🌽</span>
+    <!-- 🎥 Troque SEU_ID_DO_VIDEO pelo ID do seu vídeo no YouTube (a parte depois de "v=" ou "youtu.be/") -->
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/FuYwdV1Kx9Y"
+        title="Vídeo de apresentação"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
     </div>
 
     <a href="#comprar" class="btn">Quero as 500+ Receitas Agora</a>
@@ -517,10 +546,8 @@
       <div class="old-price">De R$97,00</div>
       <div class="new-price">R$35<sup>,00</sup></div>
       <div class="installments">à vista no Pix, ou em até 3x no cartão</div>
-      
-      <!-- SUBSTTUA O LINK ABAIXO PELO SEU CHECKOUT REAL (Kiwify, Hotmart, Eduzz, etc) -->
-      <a href="SEU_LINK_DE_CHECKOUT_AQUI" class="btn">Quero Baixar as 500+ Receitas Agora</a>
-      
+      <!-- 🔗 Troque o href abaixo pelo link real do seu checkout (Hotmart, Kiwify, Eduzz...) -->
+      <a href="#" class="btn" onclick="alert('Página de demonstração: substitua este botão pelo link do seu checkout.'); return false;">Quero Garantir Minha Vaga</a>
       <div class="btn-note"><span>🔒 Pagamento 100% seguro</span></div>
     </div>
   </div>
@@ -584,20 +611,24 @@
 
 <footer>
   <p>© 2026 500+ Receitas Infalíveis. Todos os direitos reservados.</p>
+  <div class="disclaimer">
+    ⚠️ Esta é uma página de demonstração criada para fins de teste/aprendizado. Produto, depoimentos e preços são fictícios. Substitua o link de checkout antes de publicar com um produto real.
+  </div>
 </footer>
 
 <!-- STICKY CTA -->
 <div class="sticky-cta">
   <div class="wrap row">
-    <div class="price-mini">R$35,00<small>de R$97,00</small></div>
+    <div class="price-mini">R$35,00<small>por R$97,00</small></div>
     <a href="#comprar" class="btn" style="flex:1;">Comprar Agora</a>
   </div>
 </div>
 
 <script>
+  // Contador regressivo de urgência — reinicia a cada 20 min em uma nova sessão do navegador
   (function(){
     var KEY = 'promo_end_ts';
-    var DURATION = 20 * 60 * 1000;
+    var DURATION = 20 * 60 * 1000; // 20 minutos
     var end = sessionStorage.getItem(KEY);
     if(!end){
       end = Date.now() + DURATION;
